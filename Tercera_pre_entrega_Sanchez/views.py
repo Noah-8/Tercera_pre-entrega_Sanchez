@@ -1,15 +1,17 @@
 from django.http import HttpResponse
-from django.template import Template, Context
+from datetime import datetime
+from django.template import Template, Context, loader
 
 def inicio(request):
-    archivo = open(r'C:\Users\Elast\OneDrive\Escritorio\proyectos\Tercera pre-entrega Sanchez\Tercera_pre_entrega_Sanchez\templates\inicio.html', 'r')
-    
-    template = Template(archivo.read())
-    
-    archivo.close()
-    
-    contexto = Context()
-    
-    renderizar_template = template.render(contexto)
-    
+    template = loader.get_template('inicio.html')
+    segundos = datetime.now().second
+    diccionario = {
+        'mensaje': 'Este es el mensaje de inicio...',
+        'segundos': segundos,
+    }
+    renderizar_template = template.render(diccionario)
     return HttpResponse(renderizar_template)
+
+# def fecha_actual(request):
+#     fecha = datetime.now()
+#     return HttpResponse(f'<h1>Fecha actual: {fecha}</h1>')
