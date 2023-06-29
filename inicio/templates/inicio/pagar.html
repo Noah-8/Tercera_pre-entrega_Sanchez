@@ -1,0 +1,17 @@
+ {% extends 'base.html' %}
+
+{% block title_head %}
+<title>Pagar</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Realiza tu pago
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{formulario}}
+    <input type="submit">
+</form>
+{% endblock contenido %} 

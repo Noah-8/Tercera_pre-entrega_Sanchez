@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Articulos</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Listado de Articulos
+{% endblock h1_header %}
+
+{% block contenido %}
+<button>
+    <a class="navbar-brand" href={% url 'agregar_articulos' %}>Agregar articulo</a>
+</button>
+<form action="" method="get">
+    {{formulario}}
+    <button>Buscar</button>
+</form>
+
+{% if articulos %}
+{% for articulo in articulos %}
+<li>Marca: {{articulo.marca}} - Modelo :{{articulo.modelo}}</li>
+{% endfor %}
+{% else %}
+<p>No hay resultados en la busqueda</p>
+{% endif %} 
+
+{% endblock contenido %}
