@@ -1,6 +1,6 @@
 # Tercera_pre-entrega_Sanchez
 
-En el inicio vemos el título que se pedía para el trabajo y los apartados "Cliente", "articulos" y "Pagar"
+En el inicio vemos el título que se pedía para el trabajo y los apartados "Cliente", "Articulos" y "Pagar"
 
 Se puede realizar una creación de cliente en el apartado "Cliente"
 
